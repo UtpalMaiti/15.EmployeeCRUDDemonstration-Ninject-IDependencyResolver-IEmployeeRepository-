@@ -1,0 +1,31 @@
+﻿@model EmployeeCRUDDemonstration.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+</head>
+<body>
+    <div> 
+        <h2>Enter Employee Details...</h2>
+        <form method="post" action="/Home/CreateEmployee">
+            <p>
+                <label>ID : @Html.TextBoxFor(e => e.Id)</label>
+                <label style="color:red">@Html.ValidationMessageFor(e => e.Id)</label>
+            </p>
+           @Html.Partial("_EmployeeInfo")
+            <p style="color:red">
+                @Html.ValidationMessage("InsertFailed")
+            </p>
+            <button>Create</button>
+        </form>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model EmployeeCRUDDemonstration.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Employee</title>
+</head>
+<body>
+    <div>
+        <h2>Employee Details...</h2>
+        <form method="post" action="/Home/EditEmployee">
+            @Html.HiddenFor(e=>e.Id)
+            @Html.Partial("~/Views/Shared/_EmployeeInfo.cshtml")
+            <p style="color:red">
+                @Html.ValidationMessage("UpdateFailed")
+            </p>
+            <button>Update</button>
+        </form>
+
+    </div>
+</body>
+</html>
